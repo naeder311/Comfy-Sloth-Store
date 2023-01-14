@@ -5,7 +5,6 @@ import {
   REMOVE_CART_ITEM,
   TOGGLE_CART_ITEM_AMOUNT,
 } from '../actions';
-import AddToCart from '../components/AddToCart';
 
 const cart_reducer = (state, action) => {
   if (action.type === ADD_TO_CART) {
@@ -48,6 +47,7 @@ const cart_reducer = (state, action) => {
 
   if (action.type === TOGGLE_CART_ITEM_AMOUNT) {
     const { id, value } = action.payload;
+    // eslint-disable-next-line
     const tempCart = state.cart.map((item) => {
       if (item.id === id) {
         if (value === 'inc') {

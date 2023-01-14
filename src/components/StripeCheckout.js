@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { loadStripe } from '@stripe/stripe-js';
 import {
-  PaymentElement,
   CardElement,
   useStripe,
   Elements,
@@ -67,7 +66,7 @@ const CheckoutForm = () => {
   useEffect(() => {
     createPaymentIntent();
     // eslint-diable-next-line
-  }, []);
+  });
 
   const handleChange = async (event) => {
     setDisabled(event.empty);
